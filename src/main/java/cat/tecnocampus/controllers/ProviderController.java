@@ -1,7 +1,6 @@
 package cat.tecnocampus.controllers;
 
 import cat.tecnocampus.domain.Provider;
-import cat.tecnocampus.services.CityService;
 import cat.tecnocampus.services.ProviderService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +23,7 @@ public class ProviderController {
     private Logger log = Logger.getLogger(ProviderController.class);
 
     @Autowired
-    public ProviderController(ProviderService ProviderService, CityService cityService) {
+    public ProviderController(ProviderService ProviderService) {
         this.providerService = ProviderService;
     }
 
