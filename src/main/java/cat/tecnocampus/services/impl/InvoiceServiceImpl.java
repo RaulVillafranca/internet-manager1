@@ -87,7 +87,7 @@ public class InvoiceServiceImpl implements InvoiceService{
             }
         }
 
-        if (currentResident.getCommunity().equals(invoice.getResident().getEmail())) return invoice;
+        if (currentResident.getCommunity().equals(invoice.getResident().getCommunity())) return invoice;
         else throw new InvoiceException("Not allowed, can not access to this invoice.");
     }
 
