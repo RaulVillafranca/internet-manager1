@@ -69,7 +69,7 @@ public class CommunityController {
     }
 
     @RequestMapping(value = "community", method = RequestMethod.POST)
-    @Secured("ROLE_ADMIN")
+    @Secured("ROLE_PRESIDENT")
     public String create(Community community){
         communityService.save(community);
         return "redirect:/community/" + community.getId();
