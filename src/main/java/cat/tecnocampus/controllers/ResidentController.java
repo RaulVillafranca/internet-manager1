@@ -1,6 +1,5 @@
 package cat.tecnocampus.controllers;
 
-import cat.tecnocampus.domain.Community;
 import cat.tecnocampus.domain.Resident;
 import cat.tecnocampus.exception.CommunityException;
 import cat.tecnocampus.exception.ResidentException;
@@ -70,7 +69,7 @@ public class ResidentController {
         model.addAttribute("resident", residentService.getResidentById(id));
         model.addAttribute("communities", communityService.listAllCommunity());
 
-        return "residentform";
+        return "residentformedit";
     }
 
     @RequestMapping(value = "resident", method = RequestMethod.POST )

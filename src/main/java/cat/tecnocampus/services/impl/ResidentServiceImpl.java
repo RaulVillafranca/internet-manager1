@@ -86,7 +86,7 @@ public class ResidentServiceImpl implements ResidentService {
             }
         }
 
-        if (currentResident.getCommunity().equals(resident.getEmail())) return resident;
+        if (currentResident.getCommunity().equals(resident.getCommunity())) return resident;
         else throw new ResidentException("Not allowed, can not access to this resident.");
     }
 

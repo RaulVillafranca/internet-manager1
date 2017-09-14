@@ -56,7 +56,7 @@
                   <th>Phone</th>
                   <th>Email</th>
                   <th>View</th>
-                  <th sec:authorize="hasRole('ROLE_PRESIDENT')">Edit</th>
+                  <th sec:authorize="hasRole('ROLE_PRESIDENT') and hasRole ('ROLE_USER')">Edit</th>
                 </tr>
 
                 <tr th:each="resident : ${residents}">
