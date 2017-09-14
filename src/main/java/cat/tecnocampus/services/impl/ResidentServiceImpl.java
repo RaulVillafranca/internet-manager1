@@ -121,7 +121,7 @@ public class ResidentServiceImpl implements ResidentService {
             PasswordEncoder encoder = new BCryptPasswordEncoder();
 
             List<GrantedAuthority> authorities = new ArrayList<>();
-            //authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+
             if(resident.getPresident()==true){
                 authorities.add(new SimpleGrantedAuthority("ROLE_PRESIDENT"));
             }
