@@ -55,6 +55,8 @@
                   <th>Stairs Route</th>
                   <th>Phone</th>
                   <th>Email</th>
+                  <th style="width: 40px">Active</th>
+
                   <th>View</th>
                   <th sec:authorize="hasRole('ROLE_PRESIDENT') and hasRole ('ROLE_USER')">Edit</th>
                 </tr>
@@ -70,6 +72,8 @@
                   <td th:text="${resident.stairsRoute}">Stairs Route</td>
                   <td th:text="${resident.phone}">Phone</td>
                   <td th:text="${resident.email}">email</td>
+                  <td th:if="${resident.active} == true"><span class="badge bg-green" th:text="${resident.active}">Active</span></td>
+                  <td th:if="${resident.active} == false"><span class="badge bg-red" th:text="${resident.active}"> Not Active</span></td>
 
 
                   <td><a th:href="${ '/resident/' + resident.id}">View</a></td>
