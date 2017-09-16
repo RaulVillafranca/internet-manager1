@@ -94,7 +94,7 @@ public class InvoiceServiceImpl implements InvoiceService{
     @Override
     public String createInvoiceStack(Contract contract) throws InvoiceStackException {
         Boolean warnings = true;
-
+        if (contract.getActive()== false){throw new InvoiceStackException("No invoices to generate. This contract is not active");}
         List<Invoice> invoiceList = new ArrayList<>();
         for (Resident resident : contract.getCommunity().getResidentList()) {
             if(!isInvoiceCreated(contract, resident)){
@@ -106,7 +106,7 @@ public class InvoiceServiceImpl implements InvoiceService{
         }
 
         if(warnings){
-            throw new InvoiceStackException("Nothing to generate.");
+            throw new InvoiceStackException("No invoices to generate. This monthly invoices have been already generated.");
         }else {
             invoiceRepository.save(invoiceList);
             return "New invoices have been created successfully.";
