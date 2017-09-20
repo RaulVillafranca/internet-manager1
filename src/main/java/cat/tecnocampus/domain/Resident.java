@@ -45,10 +45,7 @@ public class Resident {
 
     private String password;
 
-    private Boolean active = true;
-
     public Resident() {}
-
 
     public Resident(String nif, String name, String surname, String secondSurname, String floor, String door, String stairsRoute, String phone, String email, Community community, Boolean president, String password) {
         this.nif = nif;
@@ -63,7 +60,6 @@ public class Resident {
         this.community = community;
         this.president = president;
         this.password = password;
-
     }
 
     public Integer getId() {
@@ -177,14 +173,5 @@ public class Resident {
     public void setPassword(String password) {
         this.password = password;
     }
-
-    public Boolean getActive() {
-        return active;
-    }
-
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
-
 }
 
