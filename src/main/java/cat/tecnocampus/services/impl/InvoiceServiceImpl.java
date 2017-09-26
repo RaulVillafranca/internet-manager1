@@ -96,21 +96,27 @@ public class InvoiceServiceImpl implements InvoiceService{
         Boolean warnings = true;
         if (contract.getActive()== false){throw new InvoiceStackException("No invoices to generate. This contract is not active");}
         List<Invoice> invoiceList = new ArrayList<>();
+        int countResidentActive = 0;
+
+        for (Resident resident : contract.getCommunity().getResidentList()) {
+            if(!isInvoiceCreated(contract, resident)&& resident.getActive()==true){
+                countResidentActive++;
+            }
+        }
+        if(countResidentActive == 0){
+            throw new InvoiceStackException("No invoices to generate. This monthly invoices have been already generated.");
+        }
+
         for (Resident resident : contract.getCommunity().getResidentList()) {
             if(!isInvoiceCreated(contract, resident)&& resident.getActive()==true){
                 Date date = new Date(Calendar.getInstance().getTime().getTime());
-                Invoice newInvoice = new Invoice(date, contract, resident, contract.getMonthlyPrice()/contract.getCommunity().getResidentList().size(), 21.0);
+                Invoice newInvoice = new Invoice(date, contract, resident, contract.getMonthlyPrice()/countResidentActive, 21.0);
                 invoiceList.add(newInvoice);
-                warnings = false;
             }
         }
+        invoiceRepository.save(invoiceList);
+        return "New invoices have been created successfully.";
 
-        if(warnings){
-            throw new InvoiceStackException("No invoices to generate. This monthly invoices have been already generated.");
-        }else {
-            invoiceRepository.save(invoiceList);
-            return "New invoices have been created successfully.";
-        }
     }
 
     @Override
