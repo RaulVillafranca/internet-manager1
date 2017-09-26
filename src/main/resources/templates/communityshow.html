@@ -71,12 +71,10 @@
                   <tr>
                     <th>Name</th>
                     <th>Flat</th>
-                    <th style="width: 40px">Payments</th>
                   </tr>
                   <tr th:each="resident : ${community.residentList}">
                     <td th:text="${resident.name} + ' ' + ${resident.surname}">Name</td>
                     <td th:text="'Floor: ' + ${resident.floor} + ' | Door: ' + ${resident.door}">Flat</td>
-                    <td><span class="badge bg-green">Payed</span></td>
                   </tr>
                 </tbody></table>
             </div>

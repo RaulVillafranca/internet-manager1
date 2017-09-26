@@ -45,8 +45,6 @@ public class Resident {
 
     private String password;
 
-
-
     private Boolean active = true;
 
     public Resident() {}
@@ -179,13 +177,11 @@ public class Resident {
     }
 
     public Boolean getActive() {
-        return active;
+              return active;
     }
 
     public void setActive(Boolean active) {
         this.active = active;
     }
-
-
 }
 

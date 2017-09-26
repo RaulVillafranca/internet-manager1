@@ -59,7 +59,9 @@
                   <td th:text="${contract.name}">Contract Name</td>
                   <td th:text="${contract.dateStart}">Date Start</td>
                   <td th:text="${contract.community.name}">Community Id</td>
-                  <td th:text="${contract.active}">Active</td>
+
+                  <td th:if="${contract.active} == true"><span class="badge bg-green" th:text="${contract.active}">Active</span></td>
+                  <td th:if="${contract.active} == false"><span class="badge bg-red" th:text="${contract.active}"> Not Active</span></td>
 
                   <td><a th:href="${ '/contract/' + contract.id}">View</a></td>
                   <td sec:authorize="hasRole('ROLE_PRESIDENT')"><a th:href="${'/contract/edit/' + contract.id}">Edit</a></td>
