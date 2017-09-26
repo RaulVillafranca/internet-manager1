@@ -50,7 +50,7 @@
                   <label>City:</label>
                   <select class="form-control" th:field="*{city}" th:remove="all-but-first">
                     <option th:each="city : ${cities}"
-                            th:value="${city.id}" th:text="${city.name}">City</option>
+                            th:value="${city.id}" th:text="${city.name} + '  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;     Post code:  ' + ${city.postalcode}">City</option>
                   </select>
                 </div>
                 <div class="form-group">
