@@ -64,7 +64,7 @@
                 </div>
                 <div class="form-group">
                   <label>Monthly Price:</label>
-                  <input type="text" id="monthlyPrice" class="form-control" th:field="*{monthlyPrice}" required="true" onchange="totalByResident()"/>
+                  <input type="number" step="0.01" id="monthlyPrice" class="form-control" th:field="*{monthlyPrice}" required="true" onchange="totalByResident()"/>
                 </div>
 
                 <div class="form-group">
