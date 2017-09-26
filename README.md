@@ -30,17 +30,16 @@ Se ha de introducir usuario y password.
 El usuario: admin, password: admin es el administrador de la aplicacion.
 
 En el archivo CommunityLoader que esta en la carpeta bootstrap hay introducidos una muestra de residentes, presidentes, comunidades,
-proovedores y contratos.
-Se puede entrar a la aplicacion con cualquiera de los usuario creados, o con los que quieran crear con la aplicaci?n,
-el usuario ser? siempre el correo electronico.
-Como ejemplo de presidentes cualquiera tenemos:
+proovedores y contratos. Todos son activos y funcionales.
+
+Se puede entrar a la aplicacion con cualquiera de los usuario creados, o con los que quieran crear con la aplicacion,
+el usuario sera siempre el correo electronico.
+Como ejemplo de presidentes tenemos:
 user: president1@gmail.com password: 1234
 user: president2@gmail.com password: 1234
 Como ejemplo de residentes tenemos:
 user: jordi@api.com password: 1234
 user: eloy@api.com password: 1234
-
-
 
 # Despliegue en un servidor cloud
 Este proyecto esta preparado para ser desplegada en un servidor cloud, no es necesario un contenedor web Tomcat ya
